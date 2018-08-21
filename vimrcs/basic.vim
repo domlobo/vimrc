@@ -49,7 +49,7 @@ nmap <leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+" command W w !sudo tee % > /dev/null
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -126,24 +126,28 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" Show line numbers
+set number
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable 
-
+syntax on
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
 try
-    colorscheme desert
+    colorscheme koehler 
 catch
 endtry
 
-set background=dark
+" set background=dark
+
+set colorcolumn=72,79
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -327,7 +331,7 @@ map <leader>x :e ~/buffer.md<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-
+set completeopt-=preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
