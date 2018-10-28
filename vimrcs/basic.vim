@@ -235,6 +235,7 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext 
+nnoremap <C-t> :tabnew<cr>	
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
